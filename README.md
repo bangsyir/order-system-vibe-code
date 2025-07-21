@@ -86,39 +86,39 @@ prisma/
 1. **Install Dependencies**
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 2. **Setup Database**
 
    ```bash
    # Generate Prisma client
-   npm run db:generate
+   pnpm run db:generate
 
    # Create database and tables
-   npm run db:push
+   pnpm run db:push
 
    # Seed with sample data
-   npm run db:seed
+   pnpm run db:seed
    ```
 
 3. **Run Tests**
 
    ```bash
    # Run all tests
-   npm test
+   pnpm test
 
    # Run tests with UI
-   npm run test:ui
+   pnpm run test:ui
 
    # Run tests once
-   npm run test:run
+   pnpm run test:run
    ```
 
 4. **Start Development Server**
 
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 5. **Visit the Application**
@@ -176,13 +176,13 @@ The application includes a comprehensive test suite covering:
 
 ```bash
 # Run all tests in watch mode
-npm test
+pnpm test
 
 # Run tests with interactive UI
-npm run test:ui
+pnpm run test:ui
 
 # Run tests once (CI mode)
-npm run test:run
+pnpm run test:run
 ```
 
 ## Key Features
@@ -239,17 +239,17 @@ npm run test:run
 1. **Build the Application**
 
    ```bash
-   npm run build
+   pnpm run build
    ```
 
 2. **Setup Production Database**
 
    - Update `DATABASE_URL` in environment
-   - Run migrations: `npm run db:push`
+   - Run migrations: `pnpm run db:push`
 
 3. **Start Production Server**
    ```bash
-   npm start
+   pnpm start
    ```
 
 ## Contributing
