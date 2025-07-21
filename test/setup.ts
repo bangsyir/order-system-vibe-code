@@ -1,4 +1,5 @@
 import "@testing-library/jest-dom";
+import { vi } from "vitest";
 
 // Mock environment variables
 process.env.NODE_ENV = "test";
@@ -40,11 +41,22 @@ vi.mock("react-router", async () => {
     ...actual,
     useLoaderData: vi.fn(),
     useSubmit: vi.fn(),
-    Form: ({ children, ...props }: any) => <form {...props}>{children}</form>,
-    Link: ({ children, to, ...props }: any) => (
-      <a href={to} {...props}>
-        {children}
-      </a>
-    ),
+    Form: ({ children, ...props }: any) => {
+      const element = document.createElement("form");
+      Object.assign(element, props);
+      if (typeof children === "string") {
+        element.innerHTML = children;
+      }
+      return element;
+    },
+    Link: ({ children, to, ...props }: any) => {
+      const element = document.createElement("a");
+      element.href = to;
+      Object.assign(element, props);
+      if (typeof children === "string") {
+        element.innerHTML = children;
+      }
+      return element;
+    },
   };
 });

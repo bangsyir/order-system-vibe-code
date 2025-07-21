@@ -174,7 +174,8 @@ describe("Sales Analytics", () => {
 
     it("should handle current date when no date provided", () => {
       const today = new Date().toISOString().split("T")[0];
-      const selectedDate = undefined || today;
+      const providedDate: string | null = null;
+      const selectedDate = providedDate || today;
 
       expect(selectedDate).toBe(today);
     });
